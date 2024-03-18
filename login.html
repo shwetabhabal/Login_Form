@@ -22,6 +22,7 @@
             <div>
                 <label>email input type</label>
                 <input type="email" name="email" id="email"/>
+                <error-output class="email-error" for="email"></error-output>
             </div>
             <div>
                 <label>url input type</label>
@@ -29,7 +30,8 @@
             </div>
             <div>
                 <label>number input type</label>
-                <input type="number"/>
+                <input type="text" name="number" id="number"/>
+                <error-output class="num-error" for="number"></error-output>
             </div>
             <div>
                 <label>tel input type</label>
@@ -68,13 +70,27 @@
             const email = document.querySelector("#email");
             const emailError = document.querySelector(".email-error");
             email.addEventListener("input", function () {
-                let emailRegex = "^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$";
+                let emailRegex = /^[a-zA-Z0-9_+&*-]+(?:\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\.)+[a-zA-Z]{2,7}$/;
                 if (emailRegex.test(email.value)) {
                     emailError.textContent = "";
                 } else {
                     emailError.textContent = "Email is incorrect";
                 }
             });
+
+
+            const number = document.querySelector("#number");
+            const numerror = document.querySelector(".num-error");
+            number.addEventListener("input", function(){
+                let numRegex = /^[9][1] [0-9]{10}$/;
+                if(numRegex.test(number.value)){
+                    numerror.textContent = "";
+                }
+                else{
+                    numerror.textContent = "Number is incorrect";
+                }
+            });
+
         });
     </script>
 </body>
