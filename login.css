@@ -1,0 +1,40 @@
+body{
+    width: 600px;
+    margin: auto;
+    padding: 2rem;
+}
+.head{
+    display: flex;
+    flex-flow: column;
+    flex-wrap: wrap;
+    background-color: tomato;
+    text-align: center;
+}
+div{
+    margin-bottom: 0px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+label, button{
+    font-size: 18px;
+    margin: 20px 20px;
+   
+}
+label{
+    width: 50%;
+    text-align: right;
+}
+input{
+    width: 50%;
+    align-items: left;
+}
+error-output{
+    font-size: 12px;
+    font-family: italic;
+    color: red;
+}
+button{
+    width: 100%;
+    margin:10px 10px 10px 10px;
+}
