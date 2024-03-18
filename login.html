@@ -1,58 +1,69 @@
+<!DOCTYPE html>
 <html>
-    <head>
-        <title>Login page</title>
-        <link rel = "stylesheet" href ="login.css"/>
-    </head>
-    <script>
-        const text = document.querySelector("#text");
-        const texterror = document.querySelector(".text-error")
-    </script>
-    <body>
-        <div>
+<head>
+    <title>Login page</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div>
         <form>
             <header class="head">
                 <h1>HTML5 Form Input Fields</h1>
             </header>
-        <div>
-            <label>text input type for Name</label>
-            <input type ="text" name = "text" id="text" />
-            <error-output class="text-error" for="tex"></error-output>
-        </div>
-        <div>
-            <label>password input type</label>
-            <input type="password" name="pass" id="pass"/>
-        </div>
-        <div>
-            <label>email input type</label>
-            <input type="email" name="email" id="email"/>
-        </div>
-        <div>
-            <label>url input type</label>
-            <input type="url"/>
-        </div>
-        <div>
-            <label>number input type</label>
-            <input type="number"/>
-        </div>
-        <div>
-            <label >tel input type</label>
-            <input type="number"/>
-        </div>
-        <div>
-            <label>search input typr</label>
-            <input type="search">
-        </div>
-        <div>
-            <label>Choose date and time</label>
-            <input type="datetime-local"/>
-        </div>
-        <div>
-            <label>Choose your Salary</label>
-            <input type="range" name="sal" id="sal">
-        </div>
-        <button>Submit</button>
+            <div>
+                <label>text input type for Name</label>
+                <input type="text" name="name" id="name" />
+                <error-output class="text-error" for="name"></error-output>
+            </div>
+            <div>
+                <label>password input type</label>
+                <input type="password" name="pass" id="pass"/>
+            </div>
+            <div>
+                <label>email input type</label>
+                <input type="email" name="email" id="email"/>
+            </div>
+            <div>
+                <label>url input type</label>
+                <input type="url"/>
+            </div>
+            <div>
+                <label>number input type</label>
+                <input type="number"/>
+            </div>
+            <div>
+                <label>tel input type</label>
+                <input type="number"/>
+            </div>
+            <div>
+                <label>search input type</label>
+                <input type="search">
+            </div>
+            <div>
+                <label>Choose date and time</label>
+                <input type="datetime-local"/>
+            </div>
+            <div>
+                <label>Choose your Salary</label>
+                <input type="range" name="sal" id="sal">
+            </div>
+            <button>Submit</button>
         </form>
+    </div>
 
-        </div>
-    </body>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const name = document.querySelector("#name");
+            const textError = document.querySelector(".text-error");
+            name.addEventListener("input", function(){
+                let nameRegex = /^[A-Z][a-z]{2,}$/;
+                if(nameRegex.test(name.value)){
+                    textError.textContent = "";
+                } else {
+                    textError.textContent = "Name is incorrect";
+                }
+            });
+        });
+    </script>
+</body>
 </html>
