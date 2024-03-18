@@ -18,6 +18,7 @@
             <div>
                 <label>password input type</label>
                 <input type="password" name="pass" id="pass"/>
+                <error-output class="pass-error" for="pass"></error-output>
             </div>
             <div>
                 <label>email input type</label>
@@ -88,6 +89,18 @@
                 }
                 else{
                     numerror.textContent = "Number is incorrect";
+                }
+            });
+
+            const pass = document.querySelector("#pass");
+            const passerror= document.querySelector(".pass-error");
+            pass.addEventListener("input", function(){
+                let passRegex = /[a-zA-z0-9]{8,}/;
+                if(passRegex.test(pass.value)){
+                    passerror.textContent = "";
+                }
+                else{
+                    passerror.textContent= "Password is incorrect"
                 }
             });
 
