@@ -95,7 +95,7 @@
             const pass = document.querySelector("#pass");
             const passerror= document.querySelector(".pass-error");
             pass.addEventListener("input", function(){
-                let passRegex = /[a-zA-z0-9]{8,}/;
+                let passRegex = /^(?=.*[A-Z])(?=.*[0-9])(?=.*[@#$%^*()_+!:;']).{8,}$/;
                 if(passRegex.test(pass.value)){
                     passerror.textContent = "";
                 }
